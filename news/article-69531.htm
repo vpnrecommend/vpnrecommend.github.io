@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnrecommend.github.io/news/article-69531.htm" />
+    <!-- Title of The Page -->
+    <title>时间复杂度与空间复杂度</title>
+        <meta name="description" content="复杂度分析在我看来是数据结构与算法学习入门知识，尤为重要。 为什么复杂度分析重要？ 数据结构与算法的出现本就是为了花更少的时间和空间（储存）来解决问题。复杂度分析就是为解决如何“花更少的时间和空间（储" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN推荐 免费节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnrecommend.github.io/news/article-69531.htm" />
+    <meta property="og:site_name" content="VPN推荐 免费节点订阅中文网" />
+    <meta property="og:title" content="时间复杂度与空间复杂度" />
+    <meta property="og:image" content="https://vpnrecommend.github.io/uploads/20240912/62caaa25cf20e52056a3dc5e416a75b0.webp" />
+        <meta property="og:release_date" content="2025-03-08T05:05:39" />
+    <meta property="og:updated_time" content="2025-03-08T05:05:39" />
+        <meta property="og:description" content="复杂度分析在我看来是数据结构与算法学习入门知识，尤为重要。 为什么复杂度分析重要？ 数据结构与算法的出现本就是为了花更少的时间和空间（储存）来解决问题。复杂度分析就是为解决如何“花更少的时间和空间（储" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="时间复杂度与空间复杂度">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNV2FFXM7E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KNV2FFXM7E');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>VPN推荐</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">时间复杂度与空间复杂度</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				</h1> <p>复杂度分析在我看来是数据结构与算法学习入门知识，尤为重要。</p> <p>为什么复杂度分析重要？</p> <p>数据结构与算法的出现本就是为了花更少的时间和空间（储存）来解决问题。复杂度分析就是为解决如何“花更少的时间和空间（储存）”的问题。</p> <p>现在各种编译工具，代码跑完就能显示用了多少时间，占了多少内存。但是这些数据都是在完成代码编写之后才能得到的，这是事后统计方法。</p> <p>事后统计法得到的结果会因计算机性能和测试数据规模不同而有较大差异。这并不能体现出代码本身的效率、优劣程度，而且很可能写出的代码本身就不太行。。。</p> <p>而复杂度分析不依赖软硬件性能、数据规模等就能直接估算算法的效率、优劣，这就是其重要性。</p> <h2>时间复杂度</h2> <p>时间复杂度即算法的运行时间。</p> <p>用运行时间去描述算法的效率时，算法的执行总步数越多算法越慢，总步数越少则越快。</p> <p>假设每一行代码运行时间都为X，则<strong>算法的总运行时间等于运行的总代码行数。</strong></p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 128, 128, 1)">1</span><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> sum(n):</span><span style="color: rgba(0, 128, 128, 1)">2</span>     sum =<span style="color: rgba(0, 0, 0, 1)"> 0</span><span style="color: rgba(0, 128, 128, 1)">3</span><span style="color: rgba(0, 128, 128, 1)">4</span><span style="color: rgba(0, 0, 255, 1)">for</span> i<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(n):</span><span style="color: rgba(0, 128, 128, 1)">5</span>         sum +=<span style="color: rgba(0, 0, 0, 1)"> i</span><span style="color: rgba(0, 128, 128, 1)">6</span><span style="color: rgba(0, 0, 255, 1)">return</span> sum</pre> </div> <p>在上面代码中，假设运行一行需要 1t，则第二行运行时间为 1t，第四行、第五行执行了n遍，每行运行时间为 nt，则运行总时间就是（1+2n）t</p> <p>用函数来表示就是 T(n) = (1+2n) t，可以看出T(n)和总步数成正比关系。</p> <p>用 大O表示法 就是 T(n) = O(f(n))，f(n)为执行总步数。</p> <p>n可以是1到+∞，当其非常大的时候，一些相对于n来说小的部分就可以忽略了。</p> <p>拿前面的 1+2n 来说，当n = 100000时，1+2n = 2000001，n持续变大，常数1和系数2对结果影响就很微小了，直接忽略，最终变成了 T(n) = O(n)。</p> <hr/> <p>下面例子作为练习：</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 128, 128, 1)">1</span><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> sum(n):</span><span style="color: rgba(0, 128, 128, 1)">2</span>     sum =<span style="color: rgba(0, 0, 0, 1)"> 0</span><span style="color: rgba(0, 128, 128, 1)">3</span><span style="color: rgba(0, 128, 128, 1)">4</span><span style="color: rgba(0, 0, 255, 1)">for</span> i<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(n):</span><span style="color: rgba(0, 128, 128, 1)">5</span><span style="color: rgba(0, 0, 255, 1)">for</span> j<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(n):</span><span style="color: rgba(0, 128, 128, 1)">6</span>             sum += i +<span style="color: rgba(0, 0, 0, 1)"> j</span><span style="color: rgba(0, 128, 128, 1)">7</span><span style="color: rgba(0, 0, 255, 1)">return</span> sum</pre> </div> <p>其中有个嵌套for循环，第四行执行1次，第五行、第六行执行n次<span style="font-size: 11.6667px"><br /></span></p> <p>第二行需要运行1次，第四行运行n次，第五行、第六行执行n<sup>2</sup>次，总步数 f(n) = 1 +n +2n<sup>2</sup></p> <p>当n非常大的时候，对运算结果有影响的是n<sup>2</sup>，常数1、n、系数2都可以忽略，则&nbsp;f(n) = n<sup>2</sup>，代码运行时间 T(n) = O(n<sup>2</sup>)。</p> <h3>常见时间复杂度</h3> <p><img decoding="async" src="http://img.555519.xyz/uploads3/20220510/4b430bcc4d227c6a14d2dacaf46508e7.jpg" alt="时间复杂度与空间复杂度"></p> <h2>最好情况、最坏情况和平均情况时间复杂度</h2> <p>一段代码中，数据的具体情况也会影响运行时间</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> test(list, num):      index</span>= -1<span style="color: rgba(0, 0, 255, 1)">for</span> i<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(len(list)):</span><span style="color: rgba(0, 0, 255, 1)">if</span> list[i] ==<span style="color: rgba(0, 0, 0, 1)"> num:             index</span>=<span style="color: rgba(0, 0, 0, 1)"> i</span><span style="color: rgba(0, 0, 255, 1)">break</span><span style="color: rgba(0, 0, 255, 1)">return</span> index</pre> </div> <p>这段代码是求 变量num 在上列表 list 中的索引</p> <p>假设输入的 list = [1,2,3,4,5]</p> <p>当 num = 1 时，自第一次执行时就在list中找到了，后面不再遍历，此时时间复杂度为 O(1)。</p> <p>当 num = 5 时，全部遍历完才找到，此时时间复杂度为 O(n)。</p> <p>当 num = 6 时，全部遍历完也没找到，此时时间复杂度也为 O(n)。</p> <p>这就是数据情况不同，时间复杂度不同。</p> <p>这样就出现 最好情况、最坏情况时间复杂度。</p> <p>最好情况时间复杂度就是最理想情况下代码复杂度，对应上面例子最好时间复杂度就是O(1)；</p> <p>最坏情况时间复杂度就是最不理想情况下代码复杂度，对应上面例子最好时间复杂度就是O(n)；</p> <p>平均时间复杂度根据加权平均值求得。拿上面例子来说就是 O((3n+1)/4) = O(n)</p> <p>像最好情况时间复杂度，平均时间复杂度并没有太大参考价值，一般都是拿最坏时间复杂度当时间复杂度，因为不会有比最坏的情况再坏的了，可以说最坏时间复杂度就是一个底线。</p> <h2>空间复杂度</h2> <p>空间复杂度反应的是代码运行过程中临时变量占用的内存空间。</p> <p>代码运行所占空间分为三种：1、代码本身所占空间；2、输入数据所占空间；3、临时变量所占空间</p> <p>1和2与代码性能无关，所以空间复杂度只考虑运行过程临时占用空间</p> <p>空间复杂度记作S(n)，表示形式同样为O(f(n))</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> sum(list):     sum</span>=<span style="color: rgba(0, 0, 0, 1)"> 0</span><span style="color: rgba(0, 0, 255, 1)">for</span> i<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(len(list)):         sum</span>+=<span style="color: rgba(0, 0, 0, 1)"> list[i]</span><span style="color: rgba(0, 0, 255, 1)">return</span> sum</pre> </div> <p>该代码求输入列表list中所有元素的和。</p> <p>其中，输入的list空间不计，sum存储和，i存储元素索引，都是常数，其所占空间与n没有关系，所以该代码空间复杂度S(n) = O(1)</p> <h3>常见空间复杂度</h3> <p>O(n):</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> createList(n):     list</span>=<span style="color: rgba(0, 0, 0, 1)"> []</span><span style="color: rgba(0, 0, 255, 1)">for</span> i<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(n):         list.append(i)</span><span style="color: rgba(0, 0, 255, 1)">return</span> list</pre> </div> <p>其中临时变量有 list和i</p> <p>list为空列表，所占用空间根据for循环次数增加，最大为n，所以list的空间复杂度为O(n)，i为常数阶，与n无关，则整个代码空间复杂度为O(n)</p> <p>O(n<sup>2</sup>):</p> <div class="cnblogs_code"> <pre><span style="color: rgba(0, 0, 255, 1)">def</span><span style="color: rgba(0, 0, 0, 1)"> createList(n):     list1</span>=<span style="color: rgba(0, 0, 0, 1)"> []</span><span style="color: rgba(0, 0, 255, 1)">for</span> i<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(n):         list2</span>=<span style="color: rgba(0, 0, 0, 1)"> []</span><span style="color: rgba(0, 0, 255, 1)">for</span> j<span style="color: rgba(0, 0, 255, 1)">in</span><span style="color: rgba(0, 0, 0, 1)"> range(n):             list2.append(j)         list1.append(list2)</span><span style="color: rgba(0, 0, 255, 1)">return</span> list1</pre> </div> <p>这段代码比上面那个多了一层嵌套for循环，list1的空间占用为n，list2的空间占用为n<sup>2</sup>，则整个代码空间复杂度为O(n<sup>2</sup>)</p> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-69530.htm">MySQL高级 之 explain执行计划详解（*）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-69530.htm" title="MySQL高级 之 explain执行计划详解（*）">MySQL高级 之 explain执行计划详解（*）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-clash-v2ray-ss-ssr.htm" title="VPN推荐 | 3月7日21.5M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点地址">VPN推荐 | 3月7日21.5M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-68034.htm" title="宠物猫疫苗（宠物猫疫苗多久打一次）">宠物猫疫苗（宠物猫疫苗多久打一次）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-5-free-node-subscribe.htm" title="VPN推荐 | 3月5日21.6M/S|免费Clash/SSR/V2ray/Shadowrocket免费节点地址">VPN推荐 | 3月5日21.6M/S|免费Clash/SSR/V2ray/Shadowrocket免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-68035.htm" title="宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）">宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）</a></li>
+                        <li class="py-2"><a href="/news/article-69531.htm" title="时间复杂度与空间复杂度">时间复杂度与空间复杂度</a></li>
+                        <li class="py-2"><a href="/news/article-68869.htm" title="我被猫抓出血了,没打针,会得狂犬病吗（被猫抓出血没打针会不会得狂犬病）">我被猫抓出血了,没打针,会得狂犬病吗（被猫抓出血没打针会不会得狂犬病）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="VPN推荐 | 3月8日20.7M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址">VPN推荐 | 3月8日20.7M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-68870.htm" title="红烧肉青椒土豆的做法(红烧肉炖土豆青椒)">红烧肉青椒土豆的做法(红烧肉炖土豆青椒)</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">9</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">VPN推荐 免费节点订阅中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
