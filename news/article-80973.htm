@@ -2,21 +2,21 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://vpnrecommend.github.io/news/article-78870.htm" />
+        <link rel="canonical" href="https://vpnrecommend.github.io/news/article-80973.htm" />
     <!-- Title of The Page -->
-    <title>Cpp的异常处理Exception Handling-笔记</title>
-        <meta name="description" content="本文参考这里 Cpp的异常处理建立在三个关键字上：try, catch, throw try-catch try {// protected code }catch(...)//三点省略号，handl" />
+    <title>Redis 缓存的三大问题及其解决方案</title>
+        <meta name="description" content="一、缓存穿透 缓存穿透是指缓存和数据库中都没有的数据，而用户不断发起请求，如发起 id 为-1 的数据或者特别大的不存在的数据。有可能是黑客利用漏洞攻击从而去压垮应用的数据库。 1. 常见解决方案 对" />
         <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
 
     <meta name="author" content="VPN推荐 免费节点订阅中文网">
     <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://vpnrecommend.github.io/news/article-78870.htm" />
+    <meta property="og:url" content="https://vpnrecommend.github.io/news/article-80973.htm" />
     <meta property="og:site_name" content="VPN推荐 免费节点订阅中文网" />
-    <meta property="og:title" content="Cpp的异常处理Exception Handling-笔记" />
+    <meta property="og:title" content="Redis 缓存的三大问题及其解决方案" />
     <meta property="og:image" content="https://vpnrecommend.github.io/uploads/20240912/90b51e6ce4846d4dc2219286c26fbc41.webp" />
-        <meta property="og:release_date" content="2025-03-22T08:46:54" />
-    <meta property="og:updated_time" content="2025-03-22T08:46:54" />
-        <meta property="og:description" content="本文参考这里 Cpp的异常处理建立在三个关键字上：try, catch, throw try-catch try {// protected code }catch(...)//三点省略号，handl" />
+        <meta property="og:release_date" content="2025-03-25T08:17:41" />
+    <meta property="og:updated_time" content="2025-03-25T08:17:41" />
+        <meta property="og:description" content="一、缓存穿透 缓存穿透是指缓存和数据库中都没有的数据，而用户不断发起请求，如发起 id 为-1 的数据或者特别大的不存在的数据。有可能是黑客利用漏洞攻击从而去压垮应用的数据库。 1. 常见解决方案 对" />
         
     <!-- Meta Informations -->
     <meta charset="utf-8">
@@ -56,7 +56,7 @@
     <meta name="robots" content="max-image-preview:large" />
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Cpp的异常处理Exception Handling-笔记">
+    <meta name="apple-mobile-web-app-title" content="Redis 缓存的三大问题及其解决方案">
     <meta name="format-detection" content="telephone=no">
 
     <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
@@ -133,7 +133,7 @@
             <div class="row">
                 <div class="bread-inner">
                     <div class="col-xs-12">
-                        <h1 class="col-xs-8">Cpp的异常处理Exception Handling-笔记</h1>
+                        <h1 class="col-xs-8">Redis 缓存的三大问题及其解决方案</h1>
                         <ul class="bread-list">
                             <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
                             <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
@@ -151,10 +151,10 @@
             <div class="row">
                 <div class="col-md-9">
                                     <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
-                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> </h1> <p>本文参考<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=http://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm"  rel="nofollow">这里</a></p> <p>Cpp的异常处理建立在三个关键字上：<code>try, catch, throw</code></p> <h2 id="try-catch">try-catch</h2> <pre class="prettyprint"><code class="language-cpp hljs"><span class="hljs-keyword">try</span> {<span class="hljs-comment">// protected code</span> }<span class="hljs-keyword">catch</span>(...)<span class="hljs-comment">//三点省略号，handle any type of exception</span> {<span class="hljs-comment">// code to handle any exception</span> }</code></pre> <h2 id="throw">throw</h2> <p>略</p> <h2 id="cpp标准exception">Cpp标准exception</h2> <p>略</p> <h2 id="自定义新exception">自定义新exception</h2> <p>略</p> <hr/> </div> 			                <div class="clearfix"></div>
+                  				  				  				<div id="content_views" class="htmledit_views"> <h2>一、缓存穿透</h2> <p>缓存穿透是指缓存和数据库中都没有的数据，而用户不断发起请求，如发起 id 为-1 的数据或者特别大的不存在的数据。有可能是黑客利用漏洞攻击从而去压垮应用的数据库。</p> <h3>1. 常见解决方案</h3> <p>对于缓存穿透问题，常见的解决方案有以下三种：</p> <ul> <li> <p>验证拦截：接口层进行校验，如鉴定用户权限，对 ID 之类的字段做基础的校验，如 id&lt;=0 的字段直接拦截；</p> </li> <li> <p>缓存空数据：当数据库查询到的数据为空时，也将这条数据进行缓存，但缓存的有效性设置得要较短，以免影响正常数据的缓存；</p> <p>Copypublic Student getStudentsByID(Long id) {<!-- --></p> <pre><code>// 从Redis中获取学生信息 Student student = redisTemplate.opsForValue()     .get(String.valueOf(id)); if (student != null) {     return student; }  // 从数据库查询学生信息，并存入Redis student = studentDao.selectByStudentId(id); if (student != null) {     redisTemplate.opsForValue()         .set(String.valueOf(id), student, 60, TimeUnit.MINUTES); } else {     // 即使不存在，也将其存入缓存中     redisTemplate.opsForValue()         .set(String.valueOf(id), null, 60, TimeUnit.SECONDS); }  return student; 复制代码</code></pre> <p>}</p> </li> <li> <p>使用布隆过滤器：布隆过滤器是一种比较独特数据结构，有一定的误差。当它指定一个数据存在时，它不一定存在，但是当它指定一个数据不存在时，那么它一定是不存在的。</p> </li> </ul> <h3>2. 布隆过滤器</h3> <p>布隆过滤器是一种比较特殊的数据结构，有点类似与 HashMap，在业务中我们可能会通过使用 HashMap 来判断一个值是否存在，它可以在 O(1)时间复杂度内返回结果，效率极高，但是受限于存储容量，如果可能需要去判断的值超过亿级别，那么 HashMap 所占的内存就很可观了。</p> <p>而 BloomFilter 解决这个问题的方案很简单。首先用多个 bit 位去代替 HashMap 中的数组，这样的话储存空间就下来了，之后就是对 Key 进行多次哈希，将 Key 哈希后的值所对应的 bit 位置为 1。</p> <p>当判断一个元素是否存在时，就去判断这个值哈希出来的比特位是否都为 1，如果都为 1，那么可能存在，也可能不存在（如下图 F）。但是如果有一个 bit 位不为 1，那么这个 Key 就肯定不存在。</p> <p><img decoding="async" alt="" src="http://img.555519.xyz/uploads/20230223/217d66485f35ea50dd73dcc730b47d4b.jpg"></p> <p>注意：BloomFilter 并不支持删除操作，只支持添加操作。这一点很容易理解，因为你如果要删除数据，就得将对应的 bit 位置为 0，但是你这个 Key 对应的 bit 位可能其他的 Key 也对应着。</p> <h3>3. 缓存空数据与布隆过滤器的比较</h3> <p>上面对这两种方案都进行了简单的介绍，缓存空数据与布隆过滤器都能有效解决缓存穿透问题，但使用场景有着些许不同；</p> <ul> <li> <p>当一些恶意攻击查询查询的 key 各不相同，而且数量巨多，此时缓存空数据不是一个好的解决方案。因为它需要存储所有的 Key，内存空间占用高。并且在这种情况下，很多 key 可能只用一次，所以存储下来没有意义。所以对于这种情况而言，使用布隆过滤器是个不错的选择；</p> </li> <li> <p>而对与空数据的 Key 数量有限、Key 重复请求效率较高的场景而言，可以选择缓存空数据的方案。</p> </li> </ul> <h2>二、缓存击穿</h2> <p>缓存击穿是指当前热点数据存储到期时，多个线程同时并发访问热点数据。因为缓存刚过期，所有并发请求都会到数据库中查询数据。</p> <h3>解决方案</h3> <ul> <li> <p>将热点数据设置为永不过期；</p> </li> <li> <p>加互斥锁：互斥锁可以控制查询数据库的线程访问，但这种方案会导致系统的吞吐量下降，需要根据实际情况使用。</p> <p>Copypublic String get(key) { String value = redis.get(key); if (value == null) { // 代表缓存值过期 // 设置3min的超时，防止del操作失败的时候，下次缓存过期一直不能load db if (redis.setnx(key_mutex, 1, 3 * 60) == 1) { // 代表设置成功 value = db.get(key); redis.set(key, value, expire_secs); redis.del(key_mutex); } else { // 这个时候代表同时候的其他线程已经load db并回设到缓存了，这时候重试获取缓存值即可 sleep(50); get(key); // 重试 } } else { return value; } }</p> </li> </ul> <h2>三、缓存雪崩</h2> <p>缓存雪崩发生有几种情况，比如大量缓存集中在或者缓存同时在大范围中失效，出现了大量请求去访问数据库，从而导致 CPU 和内存过载，甚至停机。</p> <p>一个简单的雪崩过程：</p> <ol> <li> <p>Redis 集群产生了大面积故障；</p> </li> <li> <p>缓存失败，此时仍有大量请求去访问 Redis 缓存服务器；</p> </li> <li> <p>在大量 Redis 请求失败后，这些请求将会去访问数据库；</p> </li> <li> <p>由于应用的设计依赖于数据库和 Redis 服务，很快就会造成服务器集群的雪崩，最终导致整个系统的瘫痪。</p> </li> </ol> <h3>解决方案</h3> <ul> <li> <p>【事前】高可用缓存：高可用缓存是防止出现整个缓存故障。即使个别节点，机器甚至机房都关闭，系统仍然可以提供服务，Redis 哨兵(Sentinel) 和 Redis 集群(Cluster) 都可以做到高可用；</p> </li> <li> <p>【事中】缓存降级（临时支持）：当访问次数急剧增加导致服务出现问题时，我们如何确保服务仍然可用。在国内使用比较多的是 Hystrix，它通过熔断、降级、限流三个手段来降低雪崩发生后的损失。只要确保数据库不死，系统总可以响应请求，每年的春节 12306 我们不都是这么过来的吗？只要还可以响应起码还有抢到票的机会；</p> </li> <li> <p>【事后】Redis 备份和快速预热：Redis 数据备份和恢复、快速缓存预热。</p> </li> </ul> <p> 作者：xcbeyond<br /> 链接：https://juejin.cn/post/6971597474498609183<br /> 来源：掘金<br /> 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p> </p></div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-78869.htm">Java 集合框架ArrayList 储存自定义数组</a></p>
-                                        <p>下一个：<a href="/news/article-79574.htm">宠物粮食品牌取名怎么取好听点（宠物粮品牌起名字）</a></p>
+                                        <p>上一个：<a href="/news/article-80237.htm">哪里买婴儿用品便宜（买婴儿用品去哪里买）</a></p>
+                                        <p>下一个：<a href="/news/article-80974.htm">附近的动物医院在哪里啊（附近哪有动物医院?）</a></p>
                                     </div>
                                 </div>
                 <div class="col-md-3">
@@ -164,16 +164,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/news/article-68870.htm" title="红烧肉青椒土豆的做法(红烧肉炖土豆青椒)">红烧肉青椒土豆的做法(红烧肉炖土豆青椒)</a></li>
+                        <li class="py-2"><a href="/news/article-72138.htm" title="动物疫苗运输注意事项及要求（动物疫苗使用注意事项）">动物疫苗运输注意事项及要求（动物疫苗使用注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-79574.htm" title="宠物粮食品牌取名怎么取好听点（宠物粮品牌起名字）">宠物粮食品牌取名怎么取好听点（宠物粮品牌起名字）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-25-free-v2ray.htm" title="VPN推荐 | 3月25日19.4M/S|免费Shadowrocket/Clash/V2ray/SSR免费节点地址">VPN推荐 | 3月25日19.4M/S|免费Shadowrocket/Clash/V2ray/SSR免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-74122.htm" title="广州动物救助站（广州动物救助站电话地址）">广州动物救助站（广州动物救助站电话地址）</a></li>
+                        <li class="py-2"><a href="/news/article-68035.htm" title="宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）">宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-9-node-share.htm" title="VPN推荐 | 3月9日18M/S|免费Shadowrocket/Clash/SSR/V2ray免费节点地址">VPN推荐 | 3月9日18M/S|免费Shadowrocket/Clash/SSR/V2ray免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-72136.htm" title="VUE element-ui 之table表格第一行插入输入框">VUE element-ui 之table表格第一行插入输入框</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-node-subscribe-links.htm" title="VPN推荐 | 3月11日22.1M/S|免费Clash/SSR/Shadowrocket/V2ray免费节点地址">VPN推荐 | 3月11日22.1M/S|免费Clash/SSR/Shadowrocket/V2ray免费节点地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-20-node-share.htm" title="VPN推荐 | 3月20日20.1M/S|免费V2ray/Clash/SSR/Shadowrocket免费节点地址">VPN推荐 | 3月20日20.1M/S|免费V2ray/Clash/SSR/Shadowrocket免费节点地址</a></li>
                         <li class="py-2"><a href="/free-nodes/2025-3-10-free-node-subscribe-links.htm" title="VPN推荐 | 3月10日21.4M/S|免费V2ray/SSR/Shadowrocket/Clash免费节点地址">VPN推荐 | 3月10日21.4M/S|免费V2ray/SSR/Shadowrocket/Clash免费节点地址</a></li>
-                        <li class="py-2"><a href="/news/article-80974.htm" title="附近的动物医院在哪里啊（附近哪有动物医院?）">附近的动物医院在哪里啊（附近哪有动物医院?）</a></li>
-                        <li class="py-2"><a href="/news/article-72799.htm" title="动物疫苗的种类及特点（动物疫苗的种类及特点是什么）">动物疫苗的种类及特点（动物疫苗的种类及特点是什么）</a></li>
-                        <li class="py-2"><a href="/news/article-77515.htm" title="宠物店的利润怎么样（宠物店一年的纯利润能挣多少）">宠物店的利润怎么样（宠物店一年的纯利润能挣多少）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-24-node-share.htm" title="VPN推荐 | 3月24日22.7M/S|免费Shadowrocket/Clash/V2ray/SSR免费节点地址">VPN推荐 | 3月24日22.7M/S|免费Shadowrocket/Clash/V2ray/SSR免费节点地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="VPN推荐 | 3月8日20.7M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址">VPN推荐 | 3月8日20.7M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址</a></li>
-                        <li class="py-2"><a href="/news/article-78211.htm" title="Node.js躬行记（17）——UmiJS版本升级">Node.js躬行记（17）——UmiJS版本升级</a></li>
-                        <li class="py-2"><a href="/free-nodes/2025-3-23-free-high-speed-nodes.htm" title="VPN推荐 | 3月23日20.6M/S|免费V2ray/Shadowrocket/Clash/SSR免费节点地址">VPN推荐 | 3月23日20.6M/S|免费V2ray/Shadowrocket/Clash/SSR免费节点地址</a></li>
-                        <li class="py-2"><a href="/news/article-70188.htm" title="动物医院看病贵吗现在 动物医院看病贵吗现在多少钱">动物医院看病贵吗现在 动物医院看病贵吗现在多少钱</a></li>
                     </ul>
     </div>
 </div>
@@ -185,7 +185,7 @@
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">59</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+                <h4><span class="badge" style="float: right;">62</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
             </li>
                     </ul>
     </div>
