@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnrecommend.github.io/news/article-85922.htm" />
+    <!-- Title of The Page -->
+    <title>RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）</title>
+        <meta name="description" content="文章目录  RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）    发布者/订阅者 模型如下： 他与前面两个小案例最大的区别就是，他的消息不是阅完即焚的。他允许" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN推荐 免费节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnrecommend.github.io/news/article-85922.htm" />
+    <meta property="og:site_name" content="VPN推荐 免费节点订阅中文网" />
+    <meta property="og:title" content="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）" />
+    <meta property="og:image" content="https://vpnrecommend.github.io/uploads/20240912/c356f71b07900a329a214c680ec68c60.webp" />
+        <meta property="og:release_date" content="2025-04-01T09:47:11" />
+    <meta property="og:updated_time" content="2025-04-01T09:47:11" />
+        <meta property="og:description" content="文章目录  RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）    发布者/订阅者 模型如下： 他与前面两个小案例最大的区别就是，他的消息不是阅完即焚的。他允许" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNV2FFXM7E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KNV2FFXM7E');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>VPN推荐</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#RabbitMQPublishSubscribe_1" rel="nofollow">RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）</a></li> </ul> </div> </h1> <p><strong>发布者/订阅者</strong> 模型如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/ec260b9433659a1463af2932b3d8ccac.jpg" alt="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）"></p> <p>他与前面两个小案例最大的区别就是，他的消息<strong>不是阅完即焚</strong>的。<strong>他允许将同一条消息发送给多个消费者。而实现此操作的原因是加入了我们的交换机（exchange）。</strong></p> <p><strong>在发布者和订阅者的模型中，各个组件的功能如下</strong>：</p> <ul> <li><strong>Publisher</strong>：生产者，也就是要发送消息的程序，但是不再发送到队列中，而是发给X（交换机）</li> <li><strong>Exchange</strong>：交换机，一方面，接收生产者发送的消息。另一方面，知道如何处理消息，例如递交给某个特别队列、递交给所有队列、或是将消息丢弃。到底如何操作，取决于Exchange的类型。Exchange有以下3种类型： <ul> <li><strong>Fanout</strong>：广播，将消息交给所有绑定到交换机的队列</li> <li><strong>Direct</strong>：定向，把消息交给符合指定routing key 的队列</li> <li><strong>Topic</strong>：通配符，把消息交给符合routing pattern（路由模式） 的队列</li> </ul> </li> <li><strong>Queue</strong>：消息队列也与以前一样，接收消息、缓存消息。</li> <li><strong>Consumer</strong>：消费者，与以前一样，订阅队列，没有变化</li> </ul> <p><strong>注意：交换机他只负责消息的转发，并不存储消息，如果没有任何队列与Exchange绑定，或者没有符合路由规则的队列，那么消息会丢失！！</strong></p> <p>OK，这么解释肯定是不够的，下面我们就来说一下<strong>第一种交换机类型——Fanout（广播）在Java中的具体使用方式</strong>。</p> <p><strong>步骤一、在消费者服务中，利用代码声明队列、交换机，并将两者进行绑定。</strong><br /> SpringAMQP提供的**交换机（Exchange）、队列（Queue）、绑定（Binding）**的API如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/16d101567b248bce3271f6329bf5b98f.jpg" alt="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）"><br /> 要将我们的队列绑定到交换机，我们需要编写我们的配置类如下：</p> <pre><code class="prism language-java"><span class="token keyword">package</span><span class="token namespace">com<span class="token punctuation">.</span>demo<span class="token punctuation">.</span>mq<span class="token punctuation">.</span>config</span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">Binding</span></span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">BindingBuilder</span></span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">FanoutExchange</span></span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>amqp<span class="token punctuation">.</span>core<span class="token punctuation">.</span></span><span class="token class-name">Queue</span></span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Bean</span></span><span class="token punctuation">;</span><span class="token keyword">import</span><span class="token import"><span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span></span><span class="token class-name">Configuration</span></span><span class="token punctuation">;</span><span class="token annotation punctuation">@Configuration</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">FanoutConfig</span><span class="token punctuation">{<!-- --></span><span class="token comment">/**      *  声明FanoutExchange（广播交换机）      */</span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">FanoutExchange</span><span class="token function">fanoutExchange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//交换机的名称</span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">FanoutExchange</span><span class="token punctuation">(</span><span class="token string">"exchange.fanout"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      *  声明第一个队列      */</span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">Queue</span><span class="token function">fanoutQueue1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token string">"fanout.queue1"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      *  声明第二个队列      */</span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">Queue</span><span class="token function">fanoutQueue2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token keyword">new</span><span class="token class-name">Queue</span><span class="token punctuation">(</span><span class="token string">"fanout.queue2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      *  绑定 队列1 到 交换机      */</span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">Binding</span><span class="token function">bindingQueue1</span><span class="token punctuation">(</span><span class="token class-name">Queue</span> fanoutQueue1<span class="token punctuation">,</span><span class="token class-name">FanoutExchange</span> fanoutExchange<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token class-name">BindingBuilder</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>fanoutQueue1<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">to</span><span class="token punctuation">(</span>fanoutExchange<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token comment">/**      *  绑定 队列2 到 交换机      */</span><span class="token annotation punctuation">@Bean</span><span class="token keyword">public</span><span class="token class-name">Binding</span><span class="token function">bindingQueue2</span><span class="token punctuation">(</span><span class="token class-name">Queue</span> fanoutQueue2<span class="token punctuation">,</span><span class="token class-name">FanoutExchange</span> fanoutExchange<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token keyword">return</span><span class="token class-name">BindingBuilder</span><span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>fanoutQueue2<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token keyword">to</span><span class="token punctuation">(</span>fanoutExchange<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p>写完配置类，我们重启一下我们的消费者服务类，然后我们到RabbitMQ上看一下我们的交换机和队列。</p> <p>可以看到，确实多了一个交换机叫 exchange.fanout。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/6c17dd1110f48d7e66f99910916ae6cc.jpg" alt="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）"></p> <p>我们再看一下队列，可以看到，我们两个队列也都注册成功了。<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/28f6c5803f15e7732a187ab977038cb3.jpg" alt="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）"><br /> 点击我们刚才新增的交换机，打开它的Bindings，可以看到这个交换机他告诉我们，他的消息是会转发到 fanout.queue1 和 fanout.queue2中：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/67b0551e199e4af924e7f725f8423aaf.jpg" alt="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）"></p> <p>ok，我们接着往下写：</p> <p>**步骤二、在消费者服务中，编写两个消费者方法，分别监听 fanout.queue1 和 fanout.queue2。 **.</p> <p>监听的方法，现在应该已经写得滚瓜烂熟了吧，这里就直接贴代码了。<br /> 1、<strong>编写的类记得加 @Component 将这个监听的类注册到 Spring容器中。</strong><br /> 2、<strong>监听哪个queue，那么就写对应的方法，并在方法上方添加@RabbitListener注解，用queues属性标明要监听的queue即可。（如果有多个，那么用 @RabbitListener(queues = {“queueName1”, “queueName2”}）表示即可。</strong></p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Component</span><span class="token keyword">public</span><span class="token keyword">class</span><span class="token class-name">SpringRabbitListener</span><span class="token punctuation">{<!-- --></span><span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues<span class="token operator">=</span><span class="token string">"fanout.queue1"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">listenFanoutQueue1</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"监听到 fanout.queue1 的消息为：【"</span><span class="token operator">+</span> msg<span class="token operator">+</span><span class="token string">"】"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token annotation punctuation">@RabbitListener</span><span class="token punctuation">(</span>queues<span class="token operator">=</span><span class="token string">"fanout.queue2"</span><span class="token punctuation">)</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">listenFanoutQueue2</span><span class="token punctuation">(</span><span class="token class-name">String</span> msg<span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"监听到 fanout.queue2 的消息为：【"</span><span class="token operator">+</span> msg<span class="token operator">+</span><span class="token string">"】"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">}</span></code></pre> <p><strong>步骤三、在发布者服务中，编写测试方法，向交换机 exchange.fanout 发送消息。</strong></p> <pre><code class="prism language-java"><span class="token annotation punctuation">@Test</span><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">testFanoutExchange</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{<!-- --></span><span class="token comment">//交换机名称</span><span class="token class-name">String</span> exchangeName<span class="token operator">=</span><span class="token string">"exchange.fanout"</span><span class="token punctuation">;</span><span class="token comment">//消息</span><span class="token class-name">String</span> msg<span class="token operator">=</span><span class="token string">"Hello，av8d!"</span><span class="token punctuation">;</span><span class="token comment">//发送消息</span>         rabbitTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span>exchangeName<span class="token punctuation">,</span><span class="token string">""</span><span class="token punctuation">,</span> msg<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">}</span></code></pre> <p>这里的rabbitTemplate.convertAndSend接受三个参数，分别是</p> <pre><code class="prism language-java"><span class="token keyword">public</span><span class="token keyword">void</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span><span class="token class-name">String</span> exchange<span class="token punctuation">,</span><span class="token class-name">String</span> routingKey<span class="token punctuation">,</span><span class="token class-name">Object</span> object<span class="token punctuation">)</span></code></pre> <ol> <li><strong>exchange</strong>：交换机的名称</li> <li><strong>routeKey</strong>：routeKey值（还不需要用到，先不管他，给个""）</li> <li><strong>object</strong>：发送的消息</li> </ol> <p>写完测试方法，我们跑一下我们的测试方法，然后看一下我们消费者的控制台如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20221117/3c9e4093e92b132336c8853a3e984931.jpg" alt="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）"><br /> 可以看到，只发布了一条消息，但是通过交换机发布给两个Queue后，我们消费者的两个方法都监听到了我们同一条消息。</p> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-85191.htm">被野猫抓伤一点点出血有事吗（被野猫抓伤一点点出血有事吗要***吗）</a></p>
+                                        <p>下一个：<a href="/news/article-85923.htm">被猫抓了一下出了点血需要打几针狂犬（被猫抓出了一点点血要打几针）</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-80973.htm" title="Redis 缓存的三大问题及其解决方案">Redis 缓存的三大问题及其解决方案</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-7-clash-v2ray-ss-ssr.htm" title="VPN推荐 | 3月7日21.5M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点地址">VPN推荐 | 3月7日21.5M/S|免费Shadowrocket/SSR/Clash/V2ray免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-72138.htm" title="动物疫苗运输注意事项及要求（动物疫苗使用注意事项）">动物疫苗运输注意事项及要求（动物疫苗使用注意事项）</a></li>
+                        <li class="py-2"><a href="/news/article-78211.htm" title="Node.js躬行记（17）——UmiJS版本升级">Node.js躬行记（17）——UmiJS版本升级</a></li>
+                        <li class="py-2"><a href="/news/article-78869.htm" title="Java 集合框架ArrayList 储存自定义数组">Java 集合框架ArrayList 储存自定义数组</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-11-free-node-subscribe-links.htm" title="VPN推荐 | 3月11日22.1M/S|免费Clash/SSR/Shadowrocket/V2ray免费节点地址">VPN推荐 | 3月11日22.1M/S|免费Clash/SSR/Shadowrocket/V2ray免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-78870.htm" title="Cpp的异常处理Exception Handling-笔记">Cpp的异常处理Exception Handling-笔记</a></li>
+                        <li class="py-2"><a href="/news/article-84483.htm" title="我被猫抓了,没去***,会不会死（被猫抓了没***还有救吗）">我被猫抓了,没去***,会不会死（被猫抓了没***还有救吗）</a></li>
+                        <li class="py-2"><a href="/news/article-68035.htm" title="宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）">宠物粮行业分析报告模板怎么写（宠物粮行业环境分析）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-free-v2ray-subscribe.htm" title="VPN推荐 | 3月14日20.9M/S|免费Shadowrocket/V2ray/Clash/SSR免费节点地址">VPN推荐 | 3月14日20.9M/S|免费Shadowrocket/V2ray/Clash/SSR免费节点地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">6</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                            <p>
+                                <a href="/">首页</a> | 
+                                <a href="/free-node/">免费节点</a> | 
+                                <a href="/news/">新闻资讯</a> |
+                                <a href="/about-us.htm">关于我们</a> |
+                                <a href="/disclaimer.htm">免责申明</a> |
+                                <a href="/privacy.htm">隐私申明</a> |
+                                <a href="/sitemap.xml">网站地图</a>
+                            </p>
+                            <p>
+                                <a href="/">VPN推荐 免费节点订阅中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
