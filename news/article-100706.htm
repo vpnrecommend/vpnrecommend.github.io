@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://vpnrecommend.github.io/news/article-100706.htm" />
+    <!-- Title of The Page -->
+    <title>@ResponseBody详解</title>
+        <meta name="description" content="@ResponseBody的作用其实是将java对象转为json格式的数据。 @responseBody注解的作用是将controller的方法返回的对象通过适当的转换器转换为指定的格式之后，写入到r" />
+        <link rel="icon" href="/assets/website/img/clashxray/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="VPN推荐 免费节点订阅中文网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://vpnrecommend.github.io/news/article-100706.htm" />
+    <meta property="og:site_name" content="VPN推荐 免费节点订阅中文网" />
+    <meta property="og:title" content="@ResponseBody详解" />
+    <meta property="og:image" content="https://vpnrecommend.github.io/uploads/20240912/129269bd18073300faccadc04066f240.webp" />
+        <meta property="og:release_date" content="2025-04-21T06:50:29" />
+    <meta property="og:updated_time" content="2025-04-21T06:50:29" />
+        <meta property="og:description" content="@ResponseBody的作用其实是将java对象转为json格式的数据。 @responseBody注解的作用是将controller的方法返回的对象通过适当的转换器转换为指定的格式之后，写入到r" />
+        
+    <!-- Meta Informations -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Web Font -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/webfont.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap.min.css">
+    <!-- Bootstrap-Theme CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/bootstrap-theme.min.css">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/fontawesome.min.css">
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/slicknav.min.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate.min.css">
+    <!-- Magnific-Popup CSS-->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/magnific-popup.css">
+    <!-- Animate-Text CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/animate-text.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.carousel.min.css">
+    <!-- Them Default CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/owl.theme.default.min.css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/normalize.css">
+    <!-- Style CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/style.css">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="/assets/website/css/clashxray/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="@ResponseBody详解">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KNV2FFXM7E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KNV2FFXM7E');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- Preloader -->
+    <div class="preeloader">
+        <div class="preloader-spinner"></div>
+    </div>
+    <!-- End Preloader -->
+    <div id="particles-js"><canvas class="particles-js-canvas-el" width="1474" height="880" style="width: 100%; height: 100%;"></canvas></div>
+    <!-- Header Area -->
+    <header class="header">
+        <!-- Middle Header -->
+        <div class="middle-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <!-- Logo -->
+                        <div class="logo">
+                            <a href="/">
+                                                        <span>VPN推荐</span>
+                                                        </a>
+                        </div>
+                        <!--/ End Logo -->
+                        <div class="mobile-nav"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Middle Header -->
+        <!-- Header Inner -->
+        <div class="main-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse">
+                                <ul id="nav" class="nav mobile-menu navbar-nav">
+                                                                        <li><a href="/">首页</a></li>
+                                                                        <li><a href="/free-nodes/">免费节点</a></li>
+                                                                        <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                        <li><a href="/news/">新闻资讯</a></li>
+                                                                        <li><a href="/client.htm">客户端</a></li>
+                                                                    </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--/ End Header Inner -->
+    </header>
+    <!-- End Header Area -->
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs overlay">
+        <div class="container">
+            <div class="row">
+                <div class="bread-inner">
+                    <div class="col-xs-12">
+                        <h1 class="col-xs-8">@ResponseBody详解</h1>
+                        <ul class="bread-list">
+                            <li><a href="/">首页<i class="fas fa-chevron-right"></i></a></li>
+                            <li><a href="/news/">新闻资讯<i class="fas fa-chevron-right"></i></a></li>
+                            <li class="active">正文</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Breadcrumbs -->
+    <!-- About Us -->
+    <section class="about section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                                    <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <p>@ResponseBody的作用其实是将java对象转为json格式的数据。</p> <p>@responseBody注解的作用是将controller的方法返回的对象通过适当的转换器转换为指定的格式之后，写入到response对象的body区，通常用来返回JSON数据或者是XML数据。<br /> 注意：在使用此注解之后不会再走视图处理器，而是直接将数据写入到输入流中，他的效果等同于通过response对象输出指定格式的数据。</p> <p>@ResponseBody是作用在方法上的，@ResponseBody 表示该方法的返回结果直接写入 HTTP response body 中，一般在异步获取数据时使用【也就是AJAX】。<br /> 注意：在使用 @RequestMapping后，返回值通常解析为跳转路径，但是加上 @ResponseBody 后返回结果不会被解析为跳转路径，而是直接写入 HTTP response body 中。 比如异步获取 json 数据，加上 @ResponseBody 后，会直接返回 json 数据。@RequestBody 将 HTTP 请求正文插入方法中，使用适合的 HttpMessageConverter 将请求体写入某个对象。</p> <pre class="has"><code class="hljs">后台 Controller类中对应的方法： @RequestMapping("/login.do") @ResponseBody public Object login(String name, String password, HttpSession session) { 	user = userService.checkLogin(name, password); 	session.setAttribute("user", user); 	return new JsonResult(user); }  @RequestBody是作用在形参列表上，用于将前台发送过来固定格式的数据【xml格式 或者 json等】封装为对应的 JavaBean 对象， 封装时使用到的一个对象是系统默认配置的 HttpMessageConverter进行解析，然后封装到形参上。 如上面的登录后台代码可以改为： @RequestMapping("/login.do") @ResponseBody public Object login(@RequestBody User loginUuser, HttpSession session) { 	user = userService.checkLogin(loginUser); 	session.setAttribute("user", user); 	return new JsonResult(user); }</code></pre> <p>=========================================================================================</p> </h1> <p>@RequestBody 注解则是将 HTTP 请求正文插入方法中，使用适合的 HttpMessageConverter 将请求体写入某个对象。<br /> 作用：</p> <pre class="has"><code class="hljs">1) 该注解用于读取Request请求的body部分数据，使用系统默认配置的HttpMessageConverter进行解析，然后把相应的数据绑定     到要返回的对象上；&nbsp; 2) 再把HttpMessageConverter返回的对象数据绑定到 controller中方法的参数上。</code></pre> <p>使用时机：</p> <p>A) GET、POST方式提时， 根据request header Content-Type的值来判断:</p> <pre class="has"><code class="hljs">    application/x-www-form-urlencoded， 可选（即非必须，因为这种情况的数据@RequestParam, @ModelAttribute 也可以处理，当然@RequestBody也能处理）；&nbsp;     multipart/form-data, 不能处理（即使用@RequestBody不能处理这种格式的数据）；&nbsp;     其他格式， 必须（其他格式包括application/json, application/xml等。这些格式的数据，必须使用@RequestBody来处理）；</code></pre> <p>B) PUT方式提交时， 根据request header Content-Type的值来判断:</p> <pre class="has"><code class="hljs">application/x-www-form-urlencoded， 必须；multipart/form-data, 不能处理；其他格式， 必须；</code></pre> <p>说明：request的body部分的数据编码格式由header部分的Content-Type指定；</p> <p><strong>例如：</strong></p> <pre class="has"><code class="hljs">@RequestMapping(value = "user/login") @ResponseBody // 将ajax（datas）发出的请求写入 User 对象中 public User login(@RequestBody User user) {    // 这样就不会再被解析为跳转路径，而是直接将user对象写入 HTTP 响应正文中     return user;     }</code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-100704.htm">七、C++ 内联函数</a></p>
+                                        <p>下一个：<a href="/news/article-101344.htm">我们如何从MySQL中的给定日期获取日期和月份？</a></p>
+                                    </div>
+                                </div>
+                <div class="col-md-3">
+                    <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-85922.htm" title="RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）">RabbitMQ第三个实操小案例——发布者/订阅者（Publish/Subscribe）</a></li>
+                        <li class="py-2"><a href="/news/article-83043.htm" title="动物疫苗的种类有哪些,各有什么特点和作用呢（动物疫苗的种类有哪些,各有什么特点和作用呢英语）">动物疫苗的种类有哪些,各有什么特点和作用呢（动物疫苗的种类有哪些,各有什么特点和作用呢英语）</a></li>
+                        <li class="py-2"><a href="/news/article-71482.htm" title="58同城免费领养小猫结果人家说打错了（58同城宠物猫免费领养）">58同城免费领养小猫结果人家说打错了（58同城宠物猫免费领养）</a></li>
+                        <li class="py-2"><a href="/news/article-101344.htm" title="我们如何从MySQL中的给定日期获取日期和月份？">我们如何从MySQL中的给定日期获取日期和月份？</a></li>
+                        <li class="py-2"><a href="/news/article-76146.htm" title="Vue组件跨层级通信详解">Vue组件跨层级通信详解</a></li>
+                        <li class="py-2"><a href="/news/article-77515.htm" title="宠物店的利润怎么样（宠物店一年的纯利润能挣多少）">宠物店的利润怎么样（宠物店一年的纯利润能挣多少）</a></li>
+                        <li class="py-2"><a href="/news/article-96268.htm" title="动物医院实践心得体会总结怎么写 动物医院实践心得体会总结怎么写啊">动物医院实践心得体会总结怎么写 动物医院实践心得体会总结怎么写啊</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-free-subscribe-node.htm" title="VPN推荐 | 3月8日20.7M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址">VPN推荐 | 3月8日20.7M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址</a></li>
+                        <li class="py-2"><a href="/news/article-93251.htm" title="动物疫苗的了解和认识 动物疫苗的了解和认识怎么写">动物疫苗的了解和认识 动物疫苗的了解和认识怎么写</a></li>
+                        <li class="py-2"><a href="/news/article-80236.htm" title="vue项目实现webpack配置代理,解决跨域问题_vue.js">vue项目实现webpack配置代理,解决跨域问题_vue.js</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">66</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">77</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End About Us -->
+        <!-- Footer Area -->
+    <footer class="footer">
+        <!-- Copyright -->
+        <div class="copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="copyright-content">
+                                                <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                            <p>
+                                <a href="/">VPN推荐 免费节点订阅中文网</a> 版权所有 Powered by WordPress
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Copyright -->
+    </footer>
+    <!-- End Footer Area -->
+    <!-- Jquery JS -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.min.js"></script>
+    <!-- Bootstrap Js -->
+    <script src="/assets/website/js/frontend/clashxray/bootstrap.min.js"></script>
+    <!-- Slicknav Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.slicknav.min.js"></script>
+    <!-- ScrollUp Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.scrollUp.min.js"></script>
+    <!-- Carousel Js -->
+    <script src="/assets/website/js/frontend/clashxray/owl.carousel.min.js"></script>
+    <!-- Waypoints Js -->
+    <script src="/assets/website/js/frontend/clashxray/waypoints.min.js"></script>
+    <!--Counterup Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.counterup.min.js"></script>
+    <!-- Stellar Js  -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.stellar.min.js"></script>
+    <!-- Min Js -->
+    <script src="/assets/website/js/frontend/clashxray/wow.min.js"></script>
+    <!-- Animate-Text Js -->
+    <script src="/assets/website/js/frontend/clashxray/animate-text.js"></script>
+    <!-- Easing Js -->
+    <script src="/assets/website/js/frontend/clashxray/easing.min.js"></script>
+    <!-- Magnific Js -->
+    <script src="/assets/website/js/frontend/clashxray/jquery.magnific-popup.min.js"></script>
+    <!-- Particales Js -->
+    <script src="/assets/website/js/frontend/clashxray/particles.min.js"></script>
+    <!-- Particales-Code Js -->
+    <script src="/assets/website/js/frontend/clashxray/particle-code.js"></script>
+    <!-- Main Js -->
+    <script src="/assets/website/js/frontend/clashxray/main.js"></script>
+    <!-- Custom Js -->
+    <script src="/assets/website/js/frontend/clashxray/custom.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
