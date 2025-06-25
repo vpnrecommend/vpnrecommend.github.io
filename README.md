@@ -1,4 +1,4 @@
-# VPN推荐 | 6月20日22M/S|免费V2ray/SSR/Clash/Shadowrocket免费节点地址  更新时间 2025-06-20 10:24:58
+# VPN推荐 | 6月25日20.8M/S|免费SSR/V2ray/Clash/Shadowrocket免费节点地址  更新时间 2025-06-25 08:53:19
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://vpnrecommend.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://vpnrecommend.github.io/uploads/2025/06/0-20250620.yaml
-- https://vpnrecommend.github.io/uploads/2025/06/1-20250620.yaml
-- https://vpnrecommend.github.io/uploads/2025/06/2-20250620.yaml
-- https://vpnrecommend.github.io/uploads/2025/06/3-20250620.yaml
-- https://vpnrecommend.github.io/uploads/2025/06/4-20250620.yaml
+- https://vpnrecommend.github.io/uploads/2025/06/0-20250625.yaml
+- https://vpnrecommend.github.io/uploads/2025/06/1-20250625.yaml
+- https://vpnrecommend.github.io/uploads/2025/06/2-20250625.yaml
+- https://vpnrecommend.github.io/uploads/2025/06/3-20250625.yaml
+- https://vpnrecommend.github.io/uploads/2025/06/4-20250625.yaml
 
 ### V2ray订阅链接
 
-- https://vpnrecommend.github.io/uploads/2025/06/0-20250620.txt
-- https://vpnrecommend.github.io/uploads/2025/06/1-20250620.txt
-- https://vpnrecommend.github.io/uploads/2025/06/2-20250620.txt
-- https://vpnrecommend.github.io/uploads/2025/06/3-20250620.txt
-- https://vpnrecommend.github.io/uploads/2025/06/4-20250620.txt
+- https://vpnrecommend.github.io/uploads/2025/06/0-20250625.txt
+- https://vpnrecommend.github.io/uploads/2025/06/1-20250625.txt
+- https://vpnrecommend.github.io/uploads/2025/06/2-20250625.txt
+- https://vpnrecommend.github.io/uploads/2025/06/3-20250625.txt
+- https://vpnrecommend.github.io/uploads/2025/06/4-20250625.txt
 
 ### Sing-box订阅链接
 
-- https://vpnrecommend.github.io/uploads/2025/06/20250620.json
+- https://vpnrecommend.github.io/uploads/2025/06/20250625.json
 
 ## 更多clash节点订阅 ：
 
