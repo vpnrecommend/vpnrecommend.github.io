@@ -303,6 +303,41 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekobox 可以自定义路由规则吗？</h5></div>
+    <div class="panel-body">
+        支持。用户可通过界面或配置文件定义路由规则，按域名、IP 或端口匹配不同节点，实现流量分流。自定义规则增强了网络访问灵活性和安全性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Shadowrocket 支持自动测速吗？</h5></div>
+    <div class="panel-body">
+        支持。Shadowrocket 可以批量测速节点延迟并标记最佳连接。用户还可设置自动切换到最低延迟节点，实现稳定高速的上网体验，尤其在网络波动较大的环境中效果明显。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
+    <div class="panel-body">
+        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>WinXray PAC 模式如何提高访问速度？</h5></div>
+    <div class="panel-body">
+        PAC 模式根据规则判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站，提高访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Sing-box 的分流规则可以按端口分配节点吗？</h5></div>
+    <div class="panel-body">
+        支持。用户可通过端口号匹配流量，将不同应用的流量分配到指定节点，实现精准分流。结合策略组使用，可优化访问速度和网络稳定性。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>VMess 连接不稳定的常见原因有哪些？</h5></div>
+    <div class="panel-body">
+        VMess 连接不稳定可能由节点延迟过高、服务器防火墙、TLS 配置错误或 ISP 丢包引起。建议测试不同传输协议（如 WS、gRPC）或切换节点，检查日志确认具体错误信息。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>Nekoray 支持节点订阅批量更新吗？</h5></div>
+    <div class="panel-body">
+        支持。用户可通过订阅 URL 批量更新节点，程序会自动下载并替换旧节点。定期更新保证节点列表始终可用，减少手动维护，提高使用效率和便利性。<hr />    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading"><h5>Netch 是否支持系统代理？</h5></div>
     <div class="panel-body">
         Netch 不直接修改系统代理，而是通过虚拟网卡（TAP 驱动）实现透明代理。这种方式不会影响浏览器设置，适合游戏和应用程序需要 UDP 支持的场景。<hr />    </div>
@@ -313,44 +348,9 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
         Matsuri 会定期测速节点延迟，并根据结果排序。用户可选择延迟最低的节点进行访问，结合策略组实现自动切换，提高网络速度和连接稳定性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>WinXray PAC 模式如何提高访问速度？</h5></div>
-    <div class="panel-body">
-        PAC 模式根据规则判断流量是否走代理，无需手动切换节点。适合访问国内外混合网站，提高访问速度和稳定性，减少误操作导致的访问失败。<hr />    </div>
-</div>
-<div class="panel panel-default">
     <div class="panel-heading"><h5>QuantumultX 支持哪些类型的重写脚本？</h5></div>
     <div class="panel-body">
-        QuantumultX 支持 JavaScript 脚本，可修改请求头、响应内容、自动跳转、广告屏蔽和定制流量处理。结合策略组，可实现高度个性化的网络访问控制和优化。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Sing-box 的分流规则可以按端口分配节点吗？</h5></div>
-    <div class="panel-body">
-        支持。用户可通过端口号匹配流量，将不同应用的流量分配到指定节点，实现精准分流。结合策略组使用，可优化访问速度和网络稳定性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 支持节点订阅批量更新吗？</h5></div>
-    <div class="panel-body">
-        支持。用户可通过订阅 URL 批量更新节点，程序会自动下载并替换旧节点。定期更新保证节点列表始终可用，减少手动维护，提高使用效率和便利性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Shadowrocket 支持自动测速吗？</h5></div>
-    <div class="panel-body">
-        支持。Shadowrocket 可以批量测速节点延迟并标记最佳连接。用户还可设置自动切换到最低延迟节点，实现稳定高速的上网体验，尤其在网络波动较大的环境中效果明显。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 可以自定义路由规则吗？</h5></div>
-    <div class="panel-body">
-        支持。用户可通过界面或配置文件定义路由规则，按域名、IP 或端口匹配不同节点，实现流量分流。自定义规则增强了网络访问灵活性和安全性。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>VMess 连接不稳定的常见原因有哪些？</h5></div>
-    <div class="panel-body">
-        VMess 连接不稳定可能由节点延迟过高、服务器防火墙、TLS 配置错误或 ISP 丢包引起。建议测试不同传输协议（如 WS、gRPC）或切换节点，检查日志确认具体错误信息。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekoray 支持节点批量更新吗？</h5></div>
-    <div class="panel-body">
-        支持。Nekoray 可通过订阅 URL 批量下载最新节点并替换旧节点。结合定时更新功能，可保持节点列表最新，减少手动维护和配置工作。    </div>
+        QuantumultX 支持 JavaScript 脚本，可修改请求头、响应内容、自动跳转、广告屏蔽和定制流量处理。结合策略组，可实现高度个性化的网络访问控制和优化。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -398,16 +398,16 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-7.htm" title="VPN推荐 | 8月7日18.9M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点免费节点地址">VPN推荐 | 8月7日18.9M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-8-top-vpn-node.htm" title="VPN推荐 | 8月8日22.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址">VPN推荐 | 8月8日22.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-26-free-vpn-node.htm" title="VPN推荐 | 7月26日22.1M/S|免费Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点地址">VPN推荐 | 7月26日22.1M/S|免费Singbox节点/SSR节点/Clash节点/V2ray节点/Shadowrocket节点/Trojan节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-3.htm" title="VPN推荐 | 9月3日21.6M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/SSR节点免费节点地址">VPN推荐 | 9月3日21.6M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/SSR节点免费节点地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-9.htm" title="VPN推荐 | 8月9日18.7M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点免费节点地址">VPN推荐 | 8月9日18.7M/S|免费V2ray节点/Singbox节点/SSR节点/Trojan节点/Clash节点/Shadowrocket节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-8-3.htm" title="VPN推荐 | 8月3日19.6M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点免费节点地址">VPN推荐 | 8月3日19.6M/S|免费SSR节点/Clash节点/Shadowrocket节点/V2ray节点/Singbox节点/Trojan节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-19-node-share-links.htm" title="VPN推荐 | 7月19日23M/S|免费Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Singbox节点免费节点地址">VPN推荐 | 7月19日23M/S|免费Clash节点/Shadowrocket节点/SSR节点/Trojan节点/V2ray节点/Singbox节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-7-22-node-share.htm" title="VPN推荐 | 7月22日22.6M/S|免费Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点免费节点地址">VPN推荐 | 7月22日22.6M/S|免费Shadowrocket节点/SSR节点/Clash节点/V2ray节点/Trojan节点/Singbox节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-10-vpn-node.htm" title="VPN推荐 | 8月10日19.2M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点免费节点地址">VPN推荐 | 8月10日19.2M/S|免费SSR节点/Shadowrocket节点/Clash节点/Singbox节点/Trojan节点/V2ray节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-8-14-vpn-node.htm" title="VPN推荐 | 8月14日20.8M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点免费节点地址">VPN推荐 | 8月14日20.8M/S|免费Singbox节点/Shadowrocket节点/Trojan节点/V2ray节点/Clash节点/SSR节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-7-31.htm" title="VPN推荐 | 7月31日21.8M/S|免费Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址">VPN推荐 | 7月31日21.8M/S|免费Singbox节点/Trojan节点/Clash节点/V2ray节点/SSR节点/Shadowrocket节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-7.htm" title="VPN推荐 | 8月7日18.9M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点免费节点地址">VPN推荐 | 8月7日18.9M/S|免费Trojan节点/Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-8-15.htm" title="VPN推荐 | 8月15日19.7M/S|免费Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址">VPN推荐 | 8月15日19.7M/S|免费Trojan节点/SSR节点/Singbox节点/Shadowrocket节点/Clash节点/V2ray节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-8-27.htm" title="VPN推荐 | 8月27日20.1M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点免费节点地址">VPN推荐 | 8月27日20.1M/S|免费Clash节点/V2ray节点/Singbox节点/Shadowrocket节点/Trojan节点/SSR节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/mianfei-vpn-2026-8-31.htm" title="VPN推荐 | 8月31日19.7M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址">VPN推荐 | 8月31日19.7M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-4-vpn-node.htm" title="VPN推荐 | 9月4日18.1M/S|免费Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点地址">VPN推荐 | 9月4日18.1M/S|免费Trojan节点/SSR节点/Clash节点/Singbox节点/V2ray节点/Shadowrocket节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-8-11.htm" title="VPN推荐 | 8月11日20.4M/S|免费SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点免费节点地址">VPN推荐 | 8月11日20.4M/S|免费SSR节点/Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/Trojan节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-8-8-top-vpn-node.htm" title="VPN推荐 | 8月8日22.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址">VPN推荐 | 8月8日22.4M/S|免费Trojan节点/V2ray节点/Singbox节点/Clash节点/SSR节点/Shadowrocket节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/top-vpn-2026-8-23.htm" title="VPN推荐 | 8月23日20M/S|免费Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点免费节点地址">VPN推荐 | 8月23日20M/S|免费Shadowrocket节点/SSR节点/V2ray节点/Trojan节点/Singbox节点/Clash节点免费节点地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -419,10 +419,10 @@ IPLC、IEPL中转，点对点专线连接。高速冲浪，科学上网不二选
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">22</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
+                <h4><span class="badge" style="float: right;">4</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
             </li>
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">13</span> <a href="/date/2026-07/" title="2026-07 归档">2026-07</a></h4>
+                <h4><span class="badge" style="float: right;">26</span> <a href="/date/2026-08/" title="2026-08 归档">2026-08</a></h4>
             </li>
                     </ul>
     </div>
