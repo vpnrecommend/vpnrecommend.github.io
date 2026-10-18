@@ -328,9 +328,9 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
     </div>
 <h4>FAQ</h4>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>V2Ray 中的多入口（inbounds）配置有什么用？</h5></div>
+    <div class="panel-heading"><h5>Vmess 与 Trojan 哪个更快？</h5></div>
     <div class="panel-body">
-        V2Ray 支持多入口配置，可以同时开启 HTTP、Socks、TUN 等多种代理方式，方便不同程序接入。通过设置不同端口，用户可实现局域网共享或分离不同流量来源。<hr />    </div>
+        在相同环境下，Trojan 通常连接更快，因为它使用原生 TLS 通道；Vmess 则稍有额外的协议开销。但在配置合理的情况下，两者的速度差距不大，主要取决于服务器线路质量。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>SSR 的 UDP 转发功能如何启用？</h5></div>
@@ -338,9 +338,9 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
         SSR 支持 UDP 转发，可通过客户端设置开启。启用后，游戏和语音等 UDP 流量可通过节点代理，降低丢包率和延迟，提高实时网络应用体验。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Vmess 与 Trojan 哪个更快？</h5></div>
+    <div class="panel-heading"><h5>Nekobox 是否可以管理多客户端节点？</h5></div>
     <div class="panel-body">
-        在相同环境下，Trojan 通常连接更快，因为它使用原生 TLS 通道；Vmess 则稍有额外的协议开销。但在配置合理的情况下，两者的速度差距不大，主要取决于服务器线路质量。<hr />    </div>
+        可以。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。结合策略组使用，可灵活分配节点，实现多客户端管理和流量优化。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Trojan 使用自签名证书会带来哪些问题？</h5></div>
@@ -348,9 +348,14 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
         自签名证书无法被客户端默认信任，可能导致连接失败或需要手动安装证书。它也容易被中间人伪造识别，不利于长期生产环境安全部署，建议使用可信 CA 证书以获得更好兼容性与安全性。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Nekobox 是否可以管理多客户端节点？</h5></div>
+    <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
     <div class="panel-body">
-        可以。Nekobox 与 Shadowsocks、Clash 等客户端独立运行，互不干扰。结合策略组使用，可灵活分配节点，实现多客户端管理和流量优化。<hr />    </div>
+        先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。<hr />    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading"><h5>V2Ray 中的多入口（inbounds）配置有什么用？</h5></div>
+    <div class="panel-body">
+        V2Ray 支持多入口配置，可以同时开启 HTTP、Socks、TUN 等多种代理方式，方便不同程序接入。通过设置不同端口，用户可实现局域网共享或分离不同流量来源。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>V2Ray 配置文件中 inbound 和 outbound 有什么区别？</h5></div>
@@ -358,9 +363,9 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
         在 V2Ray 中，inbound 表示流量进入方式（如本地代理端口），outbound 表示流量出口方式（如 VMess、Trojan 等协议）。通过灵活组合两者，可以实现局域网共享、分流及中继等功能。<hr />    </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading"><h5>Hiddify Next 订阅更新后节点消失，如何恢复？</h5></div>
+    <div class="panel-heading"><h5>Netch 如何在 Windows 上加速游戏？</h5></div>
     <div class="panel-body">
-        先检查订阅源是否更改格式或被下架，尝试重新粘贴订阅链接并手动刷新；若仍缺失，联系订阅提供方确认是否停用某些节点或使用了新的访问权限机制（例如 token 验证）。<hr />    </div>
+        Netch 使用 TUN/TAP 模式将特定进程流量通过代理转发，常用于游戏加速。用户只需将游戏进程添加到列表，选择合适的代理节点，即可降低延迟并绕过地理限制。<hr />    </div>
 </div>
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Hysteria2 多路复用在短连接中优势是什么？</h5></div>
@@ -370,12 +375,7 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
 <div class="panel panel-default">
     <div class="panel-heading"><h5>Surfboard 策略组如何提升在线视频体验？</h5></div>
     <div class="panel-body">
-        Surfboard 可通过策略组将视频流量分配到低延迟、高带宽节点，自动切换到最佳节点，减少缓冲和卡顿，提高在线视频播放的流畅性和整体网络体验。<hr />    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading"><h5>Netch 如何在 Windows 上加速游戏？</h5></div>
-    <div class="panel-body">
-        Netch 使用 TUN/TAP 模式将特定进程流量通过代理转发，常用于游戏加速。用户只需将游戏进程添加到列表，选择合适的代理节点，即可降低延迟并绕过地理限制。    </div>
+        Surfboard 可通过策略组将视频流量分配到低延迟、高带宽节点，自动切换到最佳节点，减少缓冲和卡顿，提高在线视频播放的流畅性和整体网络体验。    </div>
 </div>
 <div class="panel panel-default mt-5">
     <div class="panel-heading">
@@ -423,16 +423,16 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2026-9-26-vpn-node.htm" title="VPN推荐 | 9月26日18.8M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点免费节点地址">VPN推荐 | 9月26日18.8M/S|免费Clash节点/V2ray节点/Shadowrocket节点/Trojan节点/Singbox节点/SSR节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-27.htm" title="VPN推荐 | 9月27日20.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点免费节点地址">VPN推荐 | 9月27日20.9M/S|免费V2ray节点/Singbox节点/Shadowrocket节点/SSR节点/Trojan节点/Clash节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-25.htm" title="VPN推荐 | 9月25日22M/S|免费Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点免费节点地址">VPN推荐 | 9月25日22M/S|免费Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-24-node-share.htm" title="VPN推荐 | 9月24日19.3M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点免费节点地址">VPN推荐 | 9月24日19.3M/S|免费SSR节点/Shadowrocket节点/Singbox节点/V2ray节点/Trojan节点/Clash节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-28-vpn-node.htm" title="VPN推荐 | 9月28日22.6M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费节点地址">VPN推荐 | 9月28日22.6M/S|免费Trojan节点/Singbox节点/V2ray节点/Clash节点/Shadowrocket节点/SSR节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-12-node-share.htm" title="VPN推荐 | 9月12日20M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址">VPN推荐 | 9月12日20M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址</a><hr /></li>
                         <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-29.htm" title="VPN推荐 | 9月29日18.4M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点免费节点地址">VPN推荐 | 9月29日18.4M/S|免费Trojan节点/V2ray节点/Shadowrocket节点/Clash节点/Singbox节点/SSR节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-9.htm" title="VPN推荐 | 9月9日18.5M/S|免费SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点免费节点地址">VPN推荐 | 9月9日18.5M/S|免费SSR节点/V2ray节点/Trojan节点/Shadowrocket节点/Singbox节点/Clash节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/2026-9-20-vpn-proxy.htm" title="VPN推荐 | 9月20日22M/S|免费Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点免费节点地址">VPN推荐 | 9月20日22M/S|免费Trojan节点/Singbox节点/SSR节点/V2ray节点/Shadowrocket节点/Clash节点免费节点地址</a><hr /></li>
-                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-9-5.htm" title="VPN推荐 | 9月5日18.8M/S|免费Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点地址">VPN推荐 | 9月5日18.8M/S|免费Clash节点/V2ray节点/SSR节点/Trojan节点/Shadowrocket节点/Singbox节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-11.htm" title="VPN推荐 | 9月11日21.8M/S|免费Clash节点/SSR节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点地址">VPN推荐 | 9月11日21.8M/S|免费Clash节点/SSR节点/Trojan节点/V2ray节点/Singbox节点/Shadowrocket节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/share-vpn-2026-10-5.htm" title="VPN推荐 | 10月5日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点免费节点地址">VPN推荐 | 10月5日21.1M/S|免费Singbox节点/Shadowrocket节点/V2ray节点/SSR节点/Clash节点/Trojan节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/free-vpn-2026-9-19.htm" title="VPN推荐 | 9月19日21.8M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点免费节点地址">VPN推荐 | 9月19日21.8M/S|免费Shadowrocket节点/Clash节点/SSR节点/Singbox节点/Trojan节点/V2ray节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-10-1.htm" title="VPN推荐 | 10月1日22.8M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费节点地址">VPN推荐 | 10月1日22.8M/S|免费Shadowrocket节点/Trojan节点/V2ray节点/SSR节点/Clash节点/Singbox节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-10-11.htm" title="VPN推荐 | 10月11日22.1M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费节点地址">VPN推荐 | 10月11日22.1M/S|免费Singbox节点/Trojan节点/Clash节点/Shadowrocket节点/V2ray节点/SSR节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/vpn-github-2026-9-7.htm" title="VPN推荐 | 9月7日23M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点/Trojan节点免费节点地址">VPN推荐 | 9月7日23M/S|免费Shadowrocket节点/Singbox节点/SSR节点/Clash节点/V2ray节点/Trojan节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-25.htm" title="VPN推荐 | 9月25日22M/S|免费Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点免费节点地址">VPN推荐 | 9月25日22M/S|免费Clash节点/Trojan节点/Singbox节点/SSR节点/Shadowrocket节点/V2ray节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/2026-9-12-node-share.htm" title="VPN推荐 | 9月12日20M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址">VPN推荐 | 9月12日20M/S|免费Clash节点/SSR节点/Singbox节点/V2ray节点/Trojan节点/Shadowrocket节点免费节点地址</a><hr /></li>
+                        <li class="py-2"><a href="/free-nodes/node-share-links-2026-9-3.htm" title="VPN推荐 | 9月3日21.6M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/SSR节点免费节点地址">VPN推荐 | 9月3日21.6M/S|免费Shadowrocket节点/Singbox节点/Trojan节点/V2ray节点/Clash节点/SSR节点免费节点地址</a><hr /></li>
                     </ul>
     </div>
 </div>
@@ -444,7 +444,7 @@ A：邀请好友或加入舰队组织后可进行组队对战，协作配合对�
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
                         <li class="py-2">
-                <h4><span class="badge" style="float: right;">10</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
+                <h4><span class="badge" style="float: right;">17</span> <a href="/date/2026-10/" title="2026-10 归档">2026-10</a></h4>
             </li>
                         <li class="py-2">
                 <h4><span class="badge" style="float: right;">29</span> <a href="/date/2026-09/" title="2026-09 归档">2026-09</a></h4>
